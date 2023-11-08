@@ -7,15 +7,13 @@ brinde otro mensaje que indique que
 debe esperar la cantidad de años que 
 necesita para cumplir 18.*/
 
-let edad = prompt('Ingrese su edad: ')
+let edad = prompt("Ingrese su edad: ")
 
 if (edad >= 18) {
-    alert("Tiene la edad suficiente para conducir.");
-} 
-else {
-
+    console.log("Tiene la edad suficiente para conducir.")
+} else {
     let anosFaltantes = 18 - edad
-    alert("Te faltan: " + anosFaltantes + " años para conducir.");
+    console.log("Te faltan " + anosFaltantes + " años para poder conducir.")
 }
 
 
@@ -27,17 +25,19 @@ indicando quién es mayor (tú o yo).
 Utilice prompt (“Ingrese su edad: ”) 
 para obtener la edad como entrada.*/
 
-let myAge = prompt("Ingrese su edad:")
-let yourAge = prompt("Ingrese la edad de otra persona:")
+let myAge = 22
+let yourAge = prompt("Ingrese la edad de otra persona: ")
 
-if (myAge > yourAge) {
-    console.log("Eres mayor que yo.")
+if (myAge == yourAge ) {
+    console.log("Tenemos la misma edad.")                
 } 
-else if (myAge < yourAge) {
-    console.log("Yo soy mayor que tú.")
+else if (myAge > yourAge) {
+    let anosQueTeFaltan = 22 - yourAge
+    console.log("Soy " + anosQueTeFaltan + " años mayor que tu.")
 } 
-else {
-    console.log("Tenemos la misma edad.")
+else if (myAge < yourAge)  {
+    let anosQueMeFaltan = yourAge - 22
+    console.log("Eres " + anosQueMeFaltan + " años mayor que yo.")
 }
 
 
@@ -47,22 +47,18 @@ else {
 'a es menor que b'. 
 Trate de implementarlo de maneras diferentes 
 1.Usando if else 
-2.Operador ternario.*/
+2.Operador ternario.*/ 
 
-var a = prompt("Ingrese el primer (a) número:");
-var b = prompt("Ingrese el segundo (b) número:");
+let a = prompt("Ingrese el primer número:")
+let b = prompt("Ingrese el segundo número:")
 
 if (a > b) {
-    console.log("a es mayor que b");
-} else {
-    console.log("a es menor o igual que b");
+    console.log(a+" es mayor que "+b)
+} else if (a < b) {
+    console.log(a+" es menor que "+b)
 }
 
-var a = prompt("Ingrese el primer (a) número:");
-var b = prompt("Ingrese el segundo (b) número:");
 
-var resultado = (a > b) ? "a es mayor que b" : "a es menor o igual que b";
-console.log(resultado);
 
 
 /*Consulta si la temporada es 
@@ -73,32 +69,43 @@ Si la entrada del usuario es:
 3. Marzo, Abril o Mayo, la temporada es Primavera
 4. Junio, Julio o Agosto, la temporada es Verano*/
 
-let mes = prompt("Ingrese el nombre del mes:")
+let mesUserInput = prompt("Ingrese el mes:")
+let mes = mesUserInput.toLowerCase()
+ {
 
-switch (mes) {
-    case "Septiembre":
-    case "Octubre":
-    case "Noviembre":
-        console.log("La temporada es Otoño.");
-        break;
-    case "Diciembre":
-    case "Enero":
-    case "Febrero":
-        console.log("La temporada es Invierno.");
-        break;
-    case "Marzo":
-    case "Abril":
-    case "Mayo":
-        console.log("La temporada es Primavera.");
-        break;
-    case "Junio":
-    case "Julio":
-    case "Agosto":
-        console.log("La temporada es Verano.");
-        break;
-    default:
-        console.log("El mes es inválido. Por favor, ingrese otro mes.");
-}
+  
+    switch (mes) {
+      case 'septiembre':
+      case 'octubre':
+      case 'noviembre':  
+    console.log("La temporada es otoño.")
+   break
+
+      case 'diciembre':
+      case 'enero':
+      case 'febrero':
+        console.log("La temporada es invierno. ")
+        break
+
+      case 'marzo':
+      case 'abril':
+      case 'mayo':
+        console.log("La temporada es primavera.")
+        break
+
+      case 'junio':
+      case 'julio':
+      case 'agosto':
+        console.log("La temporada es verano.")
+        break
+      
+      
+     
+  default:
+    console.log("Mes no valido")
+     
+    }
+  }
 
 
 
@@ -110,18 +117,16 @@ los estudiantes deacuerdo con sus puntajes:
 4. 50-59, D
 5. 0-49, F*/
 
-let puntaje = prompt("Ingrese el puntaje del estudiante: ")
+let puntaje = prompt("Ingrese el puntaje del estudiante:")
 
 if (puntaje >= 80 && puntaje <= 100) {
-    console.log("Su calificación es: A");
+    console.log("Calificación: A")
 } else if (puntaje >= 70 && puntaje < 80) {
-    console.log("Su calificación es: B");
+    console.log("Calificación: B")
 } else if (puntaje >= 60 && puntaje < 70) {
-    console.log("Su calificación es: C");
+    console.log("Calificación: C")
 } else if (puntaje >= 50 && puntaje < 60) {
-    console.log("Su calificación es: D");
+    console.log("Calificación: D")
 } else if (puntaje >= 0 && puntaje < 50) {
-    console.log("Su calificación es: F");
-} else {
-    console.log("El puntaje es inválido. Por favor, ingrese un puntaje válido.");
-}
+    console.log("Calificación: F")
+} 
